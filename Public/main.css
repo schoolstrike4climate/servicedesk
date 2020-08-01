@@ -40,6 +40,10 @@ body {
   }
 }
 
+img {
+  border-radius: 50%;
+}
+
 header {
   display: flex;
   flex-direction: column;
