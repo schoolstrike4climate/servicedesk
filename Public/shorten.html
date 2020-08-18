@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorten a URL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shorten.css">
+    <link rel="icon" type="image/x-icon" href="Logo.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142230606-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142230606-6');
+</script>
+<script src="frogs.js"></script>
+</head>
+
+<body>
+    <header class="col">
+
+      <img id="example" onclick="changeImage()" src="Logo.png" >
+
+
+    <!--    <img src="Logo.png" alt="SS4C logo"> -->
+        <section>
+            <p></p>
+            <p>Time for easy links!</p>
+            <p class="yellow">
+                Paste in the URL, click the button and viola! <span id="finger"></span>
+            </p>
+            <p class="small">Find us on Slack at <a target="_blank"
+                    href="https://ss4c-au.slack.com/archives/CSUVDRA21">#z-tech_support</a>.</p>
+
+            <!--    <h2>
+                  <a href="">Updates</a>
+                  <span id="HW_badge_cont">
+                      <span id="HW_badge"></span>
+                  </span>
+                </h2> -->
+
+        </section>
+    </header>
+    <div class="col shorten-container">
+        <div>
+                  <input name="text" type="url" value  id="linkinput" placeholder="Paste a URL to shorten" >
+
+                  <input type="submit" id="myinput" value="Shorten">
+              </div>
+            <p id="message"></p>
+         <script>
+        document.getElementById("myinput").onclick = function() {
+          var link = document.getElementById("linkinput").value;
+          var data = {
+            "domain":"ss4c.info",
+            "originalURL": link,
+            "allowDuplicates":false
+          };
+         fetch('https://api.short.cm/links/public', {
+            method: 'post',
+            headers: {
+              'accept': 'application/json',
+              'Content-Type': 'application/json',
+              'authorization': 'IXmkkgsAYMqyO8h6'
+            },
+            body: JSON.stringify(data)
+          }) .then(function(response) {
+                return response.json();
+            })
+            .then(function(data){
+            document.getElementById("message").innerHTML = "Your short link is " + data.shortURL })
+            document.getElementById("linkinput").value='';
+         }
+            </script>
+
+
+
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
