@@ -98,8 +98,8 @@ input {
   font-size: var(--font-size-default);
   padding: 2rem;
   display: flex;
-  width: 100%;
-
+  width: 100vh;
+  border: 0px;
 }
 
 ::placeholder {
@@ -107,15 +107,23 @@ input {
 
 }
 
+:default {
+  color: #f28241;
+  background-color: white;
+
+}
+
+
+
 .shorten-container {
   min-height: 100vh;
   background-color: white;
   display: flex;
   flex-direction: column;
+
 }
 
 .shorten-container {
-  padding: 2rem;
   height: 100%;
   text-decoration: none;
   font-size: var(--font-size-default);
@@ -126,12 +134,12 @@ input {
 
 
 
-.shorten-container a:not(:last-of-type) {
+.shorten-container input:not(:last-of-type) {
   border-bottom: 3px solid var(--colour-ss4c-orange);
 }
 
 
-.shorten-container a:hover {
+.shorten-container input:hover {
   background-color: var(--colour-ss4c-yellow-light);
 }
 
@@ -175,14 +183,4 @@ span#finger {
       padding-left: 0.3rem;
     }
   }
-}
-
-#HW_badge_cont {
-  position: absolute !important;
-}
-#HW_badge {
-  background: #5ab987 !important;
-}
-.sidebar__icons--headway {
-  max-width: 10%;
 }
