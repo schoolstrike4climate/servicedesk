@@ -1,0 +1,202 @@
+/* Variables */
+:root {
+  --padding-side: 2rem;
+  --colour-ss4c-yellow-light: #fff266;
+  --colour-ss4c-red: #b92600;
+  --colour-ss4c-yellow: #ffdf4f;
+  --colour-ss4c-orange: #f28241;
+  --colour-ss4c-yellow-light: #fff266;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --font-size-default: 1.5rem;
+}
+
+@media screen and (min-width: 769px) {
+  :root {
+    --padding-side: 4rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Colours */
+.orange {
+  background: var(--colour-ss4c-orange);
+  color: white;
+
+}
+
+.red {
+  background: var(--colour-ss4c-red);
+  color: white;
+
+}
+
+@media (min-width: 769px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Equally distribute the halves */
+  .col {
+    flex: 1;
+  }
+}
+
+img {
+  border-radius: 50%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header img {
+  max-width: 10rem;
+  margin-top: var(--padding-side);
+  margin-left: var(--padding-side);
+  margin-bottom: 2rem;
+}
+
+/* Add padding for introductory text */
+header section {
+  /* z-index: 10; */
+  padding: 0 var(--padding-side);
+  margin-bottom: var(--padding-side);
+}
+
+header section p {
+  font-size: var(--font-size-default);
+}
+
+/* Style smaller text */
+header section p.small {
+  font-size: 1rem;
+  margin-top: var(--padding-side);
+  color: var(--color-white);
+  max-width: 40ch;
+}
+
+
+
+header section p.small a {
+  color: inherit;
+}
+
+/* Style yellow text */
+header section p.yellow {
+/* Not sure why nothing is in this? */
+}
+
+/* Style smaller text */
+header section p.changelog-link {
+  margin-top: -2px;
+  color: var(--color-white);
+  max-width: 40ch;
+}
+
+
+/* Style text */
+.red header section p.yellow {
+  color: var(--colour-ss4c-yellow);
+  background: var(--colour-ss4c-red)
+}
+
+.orange header section p.yellow {
+  color: var(--colour-ss4c-yellow);
+  background: var(--colour-ss4c-orange)
+}
+
+.typeform-container {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.red .typeform-container a {
+  padding: 2rem;
+  height: 100%;
+  text-decoration: none;
+  font-size: var(--font-size-default);
+  color: var(--colour-ss4c-red);
+  display: flex;
+  align-items: center;
+}
+
+.orange .typeform-container a {
+  padding: 2rem;
+  height: 100%;
+  text-decoration: none;
+  font-size: var(--font-size-default);
+  color: var(--colour-ss4c-orange);
+  display: flex;
+  align-items: center;
+}
+
+.red .typeform-container a:not(:last-of-type) {
+  border-bottom: 3px solid var(--colour-ss4c-red);
+}
+
+.orange .typeform-container a:not(:last-of-type) {
+  border-bottom: 3px solid var(--colour-ss4c-orange);
+}
+
+.typeform-container a:hover {
+  background-color: var(--colour-ss4c-yellow-light);
+}
+
+/* Style finger pointer */
+span#finger:before {
+  content: "👇";
+}
+
+@media (min-width: 769px) {
+  span#finger:before {
+    content: "👉";
+  }
+}
+
+span#finger {
+  animation-name: prod;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes prod {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 769px) {
+  @keyframes prod {
+    0% {
+      padding-left: 0;
+    }
+    100% {
+      padding-left: 0.3rem;
+    }
+  }
+}
