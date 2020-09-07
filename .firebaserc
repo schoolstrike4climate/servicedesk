@@ -1,5 +1,7 @@
 {
   "projects": {
-    "hosting": "ss4c-tech-servicedesk"
+    "hosting": "ss4c-tech-servicedesk",
+    "default": "ss4c-tech-servicedesk",
+    "production": "ss4c-tech-servicedesk"
   }
 }
