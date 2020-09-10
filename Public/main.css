@@ -3,9 +3,10 @@
   --padding-side: 2rem;
   --colour-ss4c-yellow-light: #fff266;
   --colour-ss4c-red: #b92600;
-  --colour-ss4c-yellow: #ffdf4f;
+  --colour-ss4c-yellow: #fcb017;
   --colour-ss4c-orange: #f28241;
   --colour-ss4c-yellow-light: #fff266;
+  --colour-ss4c-purple: #9e2562;
   --color-black: #000000;
   --color-white: #FFFFFF;
   --font-size-default: 1.5rem;
@@ -32,6 +33,14 @@ body {
 .orange {
   background: var(--colour-ss4c-orange);
   color: white;
+
+
+}
+
+.purple {
+  background: var(--colour-ss4c-purple);
+  color: white;
+
 
 }
 
@@ -120,6 +129,12 @@ header section p.changelog-link {
   background: var(--colour-ss4c-orange)
 }
 
+.purple header section p.yellow {
+  color: var(--colour-ss4c-yellow);
+  background: var(--colour-ss4c-purple)
+}
+
+
 .typeform-container {
   min-height: 100vh;
   background-color: white;
@@ -147,12 +162,26 @@ header section p.changelog-link {
   align-items: center;
 }
 
+.purple .typeform-container a {
+  padding: 2rem;
+  height: 100%;
+  text-decoration: none;
+  font-size: var(--font-size-default);
+  color: var(--colour-ss4c-purple);
+  display: flex;
+  align-items: center;
+}
+
 .red .typeform-container a:not(:last-of-type) {
   border-bottom: 3px solid var(--colour-ss4c-red);
 }
 
 .orange .typeform-container a:not(:last-of-type) {
   border-bottom: 3px solid var(--colour-ss4c-orange);
+}
+
+.purple .typeform-container a:not(:last-of-type) {
+  border-bottom: 3px solid var(--colour-ss4c-purple);
 }
 
 .typeform-container a:hover {
